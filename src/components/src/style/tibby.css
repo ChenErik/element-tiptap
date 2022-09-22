@@ -1,0 +1,15 @@
+@import 'tippy.js/themes/light.css';
+
+.tippy-box[data-theme~='blue'] {
+  background: rgb(62, 85, 225);
+  box-shadow: rgb(0 0 0 / 30%) 0 0 4px, rgb(255 255 255 / 5%) 0 1px 0 ins;
+}
+
+.tippy-box[data-theme~='blue'] > .tippy-arrow:before {
+  border-top-color: rgb(62, 85, 225) !important;
+}
+
+.tippy-box[data-animation='translateY'][data-state='hidden'] {
+  opacity: 0;
+  transform: translateY(-20px);
+}
