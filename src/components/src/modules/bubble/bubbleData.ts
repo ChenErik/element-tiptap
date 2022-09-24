@@ -2,7 +2,7 @@ import type { Editor } from '@tiptap/vue-3'
 import { markRaw, ref } from 'vue'
 import MenuItem from '../components/MenuItem.vue'
 import FontSelectList from '../font/FontSelect.vue'
-
+import ColorSelect from '../color/ColorSelect.vue'
 export function useBubbleData(editor: Editor) {
   return ref<MenuItemProps[]>([
     {
@@ -31,15 +31,19 @@ export function useBubbleData(editor: Editor) {
       action: () => editor?.chain().focus().toggleStrike().run(),
       isActive: () => editor?.isActive('strike'),
     },
-    // {
-    //   icon: 'bold',
-    //   title: '合并单元格',
-    //   action: () => editor?.chain().focus().mergeCells().run(),
-    // },
-    // {
-    //   icon: 'italic',
-    //   title: '拆分单元格',
-    //   action: () => editor?.chain().focus().splitCell().run(),
-    // },
+    {
+      icon: 'font-color',
+      title: '字体颜色',
+      render: markRaw(ColorSelect),
+      type: 'text',
+    },
+    {
+      icon: 'mark-pen-line',
+      title: '背景高亮',
+      render: markRaw(ColorSelect),
+      type: 'background',
+      action: () => editor?.chain().focus().toggleHighlight().run(),
+      isActive: () => editor?.isActive('highlight'),
+    },
   ])
 }

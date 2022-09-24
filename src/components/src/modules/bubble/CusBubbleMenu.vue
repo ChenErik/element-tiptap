@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { inject, onMounted } from 'vue'
+import { inject } from 'vue'
 import { BubbleMenu } from '@tiptap/vue-3'
 import { editorKey } from '../../utils'
 import MenuBar from '../menu/MenuBar.vue'
