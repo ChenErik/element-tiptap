@@ -16,6 +16,12 @@ const tableBubbleData = ref<MenuItemProps[]>([
     render: markRaw(MenuItem),
     action: () => editor.value?.chain().focus().splitCell().run(),
   },
+  {
+    icon: 'mark-pen-fill',
+    title: '表格背景色',
+    render: markRaw(MenuItem),
+    action: () => editor.value.chain().focus().setCellAttribute('backgroundColor', '#FAF594').run(),
+  },
 ])
 </script>
 
