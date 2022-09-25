@@ -16,11 +16,16 @@ defineProps<MenuBarProps>()
 
 -
 <style lang="less" scoped>
-.divider {
-  width: 2px;
-  height: 1.25rem;
-  background-color: rgba(#000, 0.1);
-  margin-left: 0.5rem;
-  margin-right: 0.75rem;
-}
+  .menu-bar {
+    display: flex;
+    align-items: center;
+
+    .divider {
+      width: 2px;
+      height: 1.25rem;
+      background-color: rgba(#000, 0.1);
+      margin-left: 0.5rem;
+      margin-right: 0.75rem;
+    }
+  }
 </style>

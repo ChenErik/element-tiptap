@@ -36,20 +36,5 @@ const bubbleData = useBubbleData(editor.value)
   padding: 0.2rem;
   border-radius: 0.5rem;
   height: 1.8rem;
-
-  button {
-    border: none;
-    background: none;
-    color: #fff;
-    font-size: 0.85rem;
-    font-weight: 500;
-    padding: 0 0.2rem;
-    opacity: 0.6;
-
-    &:hover,
-    &.is-active {
-      opacity: 1;
-    }
-  }
 }
 </style>
