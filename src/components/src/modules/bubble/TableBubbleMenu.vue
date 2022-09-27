@@ -2,6 +2,7 @@
 import { inject, markRaw, ref } from 'vue'
 import { editorKey } from '../../utils'
 import MenuItem from '../components/MenuItem.vue'
+import ColorSelect from '../color/ColorSelect.vue'
 const editor = inject(editorKey)!()
 const tableBubbleData = ref<MenuItemProps[]>([
   {
@@ -19,8 +20,9 @@ const tableBubbleData = ref<MenuItemProps[]>([
   {
     icon: 'mark-pen-fill',
     title: '表格背景色',
-    render: markRaw(MenuItem),
-    action: () => editor.value.chain().focus().setCellAttribute('backgroundColor', '#FAF594').run(),
+    render: markRaw(ColorSelect),
+    type: 'tableBg',
+    // action: () => editor.value.chain().focus().setCellAttribute('backgroundColor', '#FAF594').run(),
   },
 ])
 </script>

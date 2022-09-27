@@ -21,8 +21,10 @@ function setColor(hex: string) {
   if (props.type === 'text')
     editor.value.chain().focus().setColor(hex).run()
 
-  else
+  if (props.type === 'background')
     editor.value.chain().focus().toggleHighlight({ color: hex }).run()
+  if (props.type === 'tableBg')
+    editor.value.chain().focus().setCellAttribute('backgroundColor', hex).run()
 
   popoverVisible.value = false
 }
@@ -48,8 +50,10 @@ function unsetColor() {
   if (props.type === 'text')
     editor.value.chain().focus().unsetColor().run()
 
-  else
+  if (props.type === 'background')
     editor.value.chain().focus().unsetHighlight().run()
+  if (props.type === 'tableBg')
+    editor.value.chain().focus().setCellAttribute('backgroundColor', '#fffff').run()
 }
 </script>
 

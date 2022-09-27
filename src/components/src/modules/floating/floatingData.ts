@@ -1,7 +1,6 @@
 import type { Editor } from '@tiptap/vue-3'
 import { markRaw, ref } from 'vue'
 import MenuItem from '../components/MenuItem.vue'
-import EmojiSelect from '../emoji/Emoji.vue'
 import { useTableData } from '../table/index'
 export function useFloatingData(editor: Editor) {
   return ref<MenuItemProps[]>([
@@ -46,11 +45,6 @@ export function useFloatingData(editor: Editor) {
       title: '分割线',
       render: markRaw(MenuItem),
       action: () => editor?.chain().focus().setHorizontalRule().run(),
-    },
-    {
-      icon: 'emotion-line',
-      title: 'Emoji表情',
-      render: markRaw(EmojiSelect),
     },
   ])
 }

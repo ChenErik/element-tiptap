@@ -6,12 +6,10 @@ import { getEmojis } from './emoji'
 interface Props {
   title: string
   icon: string
-  type: string
 }
 const props = withDefaults(defineProps<Props>(), {
   title: '字体颜色',
   icon: 'font-color',
-  type: 'text',
 })
 
 const editor = inject(editorKey)!()
@@ -27,15 +25,15 @@ function setEmoji(emoji: string) {
   <el-popover
     v-model:visible="popoverVisible"
     placement="bottom"
-    :width="365"
+    width="max-content"
     trigger="click"
   >
     <template #reference>
       <MenuItem :title="title" :icon="icon" />
     </template>
     <template #default>
-      <div class="color-box">
-        <div v-for="item in emojiList" :key="item" class="color-box_item" @click="setEmoji(item)">
+      <div class="emoji-box">
+        <div v-for="item in emojiList" :key="item" class="emoji-box_item" @click="setEmoji(item)">
           {{ item }}
         </div>
       </div>
@@ -44,7 +42,7 @@ function setEmoji(emoji: string) {
 </template>
 
 <style lang="less">
-  .color-box {
+  .emoji-box {
     display: grid;
     grid-template-columns: repeat(9, 1fr);
     width: 100%;
