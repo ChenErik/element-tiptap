@@ -2,6 +2,7 @@ import type { Editor } from '@tiptap/vue-3'
 import { markRaw, ref } from 'vue'
 import MenuItem from '../components/MenuItem.vue'
 import FontSelectList from '../font/FontSelect.vue'
+import FontStyle from '../font/FontStyle.vue'
 import EmojiSelect from '../emoji/Emoji.vue'
 import { useTableData } from '../table/index'
 import { useColorData } from '../color/index'
@@ -13,53 +14,9 @@ export function useMenuData(editor: Editor) {
       render: markRaw(FontSelectList),
     },
     {
-      icon: 'bold',
-      title: '加粗',
-      render: markRaw(MenuItem),
-      action: () => editor?.chain().toggleBold().focus().run(),
-      isActive: () => editor?.isActive('bold'),
-    },
-    {
-      icon: 'italic',
-      title: '斜体',
-      render: markRaw(MenuItem),
-      action: () => editor?.chain().focus().toggleItalic().run(),
-      isActive: () => editor?.isActive('italic'),
-    },
-    {
-      icon: 'align-left',
-      title: '居左',
-      render: markRaw(MenuItem),
-      action: () => editor?.chain().focus().setTextAlign('left').run(),
-      isActive: () => editor?.isActive({ textAlign: 'left' }),
-    },
-    {
-      icon: 'align-center',
-      title: '居中',
-      render: markRaw(MenuItem),
-      action: () => editor?.chain().focus().setTextAlign('center').run(),
-      isActive: () => editor?.isActive({ textAlign: 'center' }),
-    },
-    {
-      icon: 'align-right',
-      title: '居右',
-      render: markRaw(MenuItem),
-      action: () => editor?.chain().focus().setTextAlign('right').run(),
-      isActive: () => editor?.isActive({ textAlign: 'right' }),
-    },
-    {
-      icon: 'strikethrough',
-      title: '删除线',
-      render: markRaw(MenuItem),
-      action: () => editor?.chain().focus().toggleStrike().run(),
-      isActive: () => editor?.isActive('strike'),
-    },
-    {
-      icon: 'code-view',
-      title: '行内代码',
-      render: markRaw(MenuItem),
-      action: () => editor?.chain().focus().toggleCode().run(),
-      isActive: () => editor?.isActive('code'),
+      type: 'title',
+      title: '字体样式',
+      render: markRaw(FontStyle),
     },
     ...useColorData(editor),
     useTableData(editor),

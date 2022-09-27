@@ -19,6 +19,7 @@ declare module '@vue/runtime-core' {
     ElPopover: typeof import('element-plus/es')['ElPopover']
     Emoji: typeof import('./../src/components/src/modules/emoji/Emoji.vue')['default']
     FontSelect: typeof import('./../src/components/src/modules/font/FontSelect.vue')['default']
+    FontStyle: typeof import('./../src/components/src/modules/font/FontStyle.vue')['default']
     IconDropdown: typeof import('./../src/components/src/modules/components/IconDropdown.vue')['default']
     MenuBar: typeof import('./../src/components/src/modules/menu/MenuBar.vue')['default']
     MenuItem: typeof import('./../src/components/src/modules/components/MenuItem.vue')['default']

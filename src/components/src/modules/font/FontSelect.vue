@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { inject, onMounted, ref, watch } from 'vue'
+import { inject, ref } from 'vue'
 import { ArrowDown, Check } from '@element-plus/icons-vue'
 import { editorKey } from '../../utils/index'
 type Level = 1 | 2 | 3 | 4 | 5 | 6
