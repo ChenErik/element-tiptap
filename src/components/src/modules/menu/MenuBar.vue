@@ -14,7 +14,6 @@ defineProps<MenuBarProps>()
   </div>
 </template>
 
--
 <style lang="less" scoped>
   .menu-bar {
     display: flex;

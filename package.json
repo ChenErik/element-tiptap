@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@element-plus/icons-vue": "^2.0.9",
+    "@tiptap/core": "2.0.0-beta.197",
     "@tiptap/extension-bubble-menu": "2.0.0-beta.195",
     "@tiptap/extension-color": "2.0.0-beta.196",
     "@tiptap/extension-highlight": "2.0.0-beta.195",
@@ -19,11 +20,15 @@
     "@tiptap/extension-table-row": "2.0.0-beta.195",
     "@tiptap/extension-task-item": "2.0.0-beta.196",
     "@tiptap/extension-task-list": "2.0.0-beta.196",
+    "@tiptap/extension-text-align": "2.0.0-beta.197",
     "@tiptap/extension-text-style": "2.0.0-beta.196",
     "@tiptap/extension-typography": "2.0.0-beta.195",
     "@tiptap/starter-kit": "2.0.0-beta.195",
     "@tiptap/vue-3": "2.0.0-beta.195",
     "element-plus": "^2.2.17",
+    "prosemirror-model": "^1.18.1",
+    "prosemirror-state": "^1.4.1",
+    "prosemirror-view": "^1.28.2",
     "remixicon": "^2.5.0",
     "tippy.js": "^6.3.7",
     "vue": "^3.2.37"

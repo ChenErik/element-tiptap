@@ -25,6 +25,27 @@ export function useBubbleData(editor: Editor) {
       isActive: () => editor?.isActive('italic'),
     },
     {
+      icon: 'align-left',
+      title: '居左',
+      render: markRaw(MenuItem),
+      action: () => editor?.chain().focus().setTextAlign('left').run(),
+      isActive: () => editor?.isActive({ textAlign: 'left' }),
+    },
+    {
+      icon: 'align-center',
+      title: '居中',
+      render: markRaw(MenuItem),
+      action: () => editor?.chain().focus().setTextAlign('center').run(),
+      isActive: () => editor?.isActive({ textAlign: 'center' }),
+    },
+    {
+      icon: 'align-right',
+      title: '居右',
+      render: markRaw(MenuItem),
+      action: () => editor?.chain().focus().setTextAlign('right').run(),
+      isActive: () => editor?.isActive({ textAlign: 'right' }),
+    },
+    {
       icon: 'strikethrough',
       title: '删除线',
       render: markRaw(MenuItem),
