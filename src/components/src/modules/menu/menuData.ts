@@ -91,6 +91,12 @@ export function useMenuData(editor: Editor) {
       action: () => editor?.chain().focus().clearNodes().unsetAllMarks().run(),
     },
     {
+      icon: 'brush-line',
+      title: '添加画布',
+      render: markRaw(MenuItem),
+      action: () => editor?.chain().focus().insertContent('<div data-type="paper"></div>').run(),
+    },
+    {
       type: 'divider',
       title: '分割线',
     },

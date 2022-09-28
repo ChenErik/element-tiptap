@@ -12,6 +12,7 @@ const bubbleData = useBubbleData(editor.value)
 
 <template>
   <BubbleMenu
+    v-if="!editor?.isActive('paper')"
     class="currency-bubble"
     :tippy-options="{
       duration: 100,

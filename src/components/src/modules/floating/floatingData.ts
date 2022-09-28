@@ -46,5 +46,11 @@ export function useFloatingData(editor: Editor) {
       render: markRaw(MenuItem),
       action: () => editor?.chain().focus().setHorizontalRule().run(),
     },
+    {
+      icon: 'brush-line',
+      title: '添加画布',
+      render: markRaw(MenuItem),
+      action: () => editor?.chain().focus().insertContent('<div data-type="paper"></div>').run(),
+    },
   ])
 }

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { JSONContent } from '@tiptap/vue-3'
 import { onBeforeUnmount, provide, ref, watch } from 'vue'
-import { EditorContent, useEditor } from '@tiptap/vue-3'
+import { Editor, EditorContent, useEditor } from '@tiptap/vue-3'
 /* 扩展 */
 import extensions from './extension/index'
 /* 扩展 */
@@ -96,10 +96,10 @@ onBeforeUnmount(() => {
 .element-tiptap {
   display: flex;
   flex-direction: column;
-  max-height: 26rem;
   color: #0d0d0d;
   background-color: #fff;
   border: 1px solid #ccc;
+  flex-grow: 1;
 
   &_header {
     display: flex;
@@ -116,6 +116,14 @@ onBeforeUnmount(() => {
     overflow-x: hidden;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
+  }
+
+  .ProseMirror .is-empty:before {
+    content: attr(data-placeholder);
+    float: left;
+    color: #ced4da;
+    pointer-events: none;
+    height: 0;
   }
 }
 </style>

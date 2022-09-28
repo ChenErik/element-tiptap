@@ -7,15 +7,19 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    CodeBlock: typeof import('./../src/components/src/modules/code/CodeBlock.vue')['default']
     ColorSelect: typeof import('./../src/components/src/modules/color/ColorSelect.vue')['default']
     CusBubbleMenu: typeof import('./../src/components/src/modules/bubble/CusBubbleMenu.vue')['default']
     CusFloatingMenu: typeof import('./../src/components/src/modules/floating/CusFloatingMenu.vue')['default']
+    Draw: typeof import('./../src/components/src/modules/draw/Draw.vue')['default']
     ElButton: typeof import('element-plus/es')['ElButton']
+    ElColorPicker: typeof import('element-plus/es')['ElColorPicker']
     ElDropdown: typeof import('element-plus/es')['ElDropdown']
     ElDropdownItem: typeof import('element-plus/es')['ElDropdownItem']
     ElDropdownMenu: typeof import('element-plus/es')['ElDropdownMenu']
     ElIcon: typeof import('element-plus/es')['ElIcon']
     ElInput: typeof import('element-plus/es')['ElInput']
+    ElInputNumber: typeof import('element-plus/es')['ElInputNumber']
     ElPopover: typeof import('element-plus/es')['ElPopover']
     Emoji: typeof import('./../src/components/src/modules/emoji/Emoji.vue')['default']
     FontSelect: typeof import('./../src/components/src/modules/font/FontSelect.vue')['default']
