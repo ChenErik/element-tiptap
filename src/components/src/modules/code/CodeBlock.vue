@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { NodeViewContent, NodeViewWrapper, nodeViewProps } from '@tiptap/vue-3'
 import { computed, ref } from 'vue'
+import CusSelect from '../components/CusSelet.vue'
 const props = defineProps(nodeViewProps)
 const selectedLanguage = computed({
   get() {
@@ -10,7 +11,23 @@ const selectedLanguage = computed({
     props.updateAttributes({ language })
   },
 })
-const languages = ref<string[]>(props.extension.options.lowlight.listLanguages())
+interface List {
+  label: string | number | null
+  value: string | number
+  disabled?: boolean
+  [key: string]: any
+}
+function getLanguages(): List[] {
+  const prefixLanguages = [{ label: 'auto', value: '' }, { label: '-', value: '', disabled: true }]
+  const tmpArr = props.extension.options.lowlight.listLanguages().map((e: string) => {
+    return {
+      label: e,
+      value: e,
+    }
+  })
+  return prefixLanguages.concat(tmpArr)
+}
+const languages = ref<List[]>(getLanguages())
 </script>
 
 <template>
@@ -20,17 +37,7 @@ const languages = ref<string[]>(props.extension.options.lowlight.listLanguages()
       <div class="dot" />
       <div class="dot" />
     </div>
-    <select v-model="selectedLanguage" contenteditable="false">
-      <option :value="null">
-        auto
-      </option>
-      <option disabled>
-        —
-      </option>
-      <option v-for="(language, index) in languages" :key="index" :value="language">
-        {{ language }}
-      </option>
-    </select>
+    <CusSelect v-model="selectedLanguage" class="code-block_select" :list="languages" />
     <pre><code><NodeViewContent /></code></pre>
   </NodeViewWrapper>
 </template>
@@ -39,7 +46,7 @@ const languages = ref<string[]>(props.extension.options.lowlight.listLanguages()
 .code-block {
   position: relative;
 
-  select {
+  &_select {
     position: absolute;
     top: 0.5rem;
     right: 0.5rem;

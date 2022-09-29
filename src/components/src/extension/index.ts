@@ -7,6 +7,7 @@ import TableExtension from './table'
 import ColorExtension from './color'
 import TaskExtension from './taskList'
 import CodeBlockExtension from './codeBlock'
+import ImageExtension from './imageDrag'
 export default [
   Document.extend({
     content: 'heading block*',
@@ -18,10 +19,11 @@ export default [
   ...CodeBlockExtension,
   Typography,
   TextAlign.configure({
-    types: ['heading', 'paragraph'],
+    types: ['heading', 'paragraph', 'image'],
   }),
   ...TaskExtension,
   ...TableExtension,
   ...ColorExtension,
+  ImageExtension,
   Paper,
 ]

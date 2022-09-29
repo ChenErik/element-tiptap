@@ -8,7 +8,9 @@ specifiers:
   '@tiptap/extension-code-block-lowlight': 2.0.0-beta.197
   '@tiptap/extension-color': 2.0.0-beta.196
   '@tiptap/extension-document': 2.0.0-beta.197
+  '@tiptap/extension-dropcursor': 2.0.0-beta.197
   '@tiptap/extension-highlight': 2.0.0-beta.195
+  '@tiptap/extension-image': 2.0.0-beta.197
   '@tiptap/extension-placeholder': 2.0.0-beta.197
   '@tiptap/extension-table': 2.0.0-beta.195
   '@tiptap/extension-table-cell': 2.0.0-beta.195
@@ -49,7 +51,9 @@ dependencies:
   '@tiptap/extension-code-block-lowlight': 2.0.0-beta.197_7ucu3cj5vc65mnzl27ajc44kci
   '@tiptap/extension-color': 2.0.0-beta.196_mpfpbxnfyti6who622jw73viky
   '@tiptap/extension-document': 2.0.0-beta.197_7ucu3cj5vc65mnzl27ajc44kci
+  '@tiptap/extension-dropcursor': 2.0.0-beta.197_7ucu3cj5vc65mnzl27ajc44kci
   '@tiptap/extension-highlight': 2.0.0-beta.195_7ucu3cj5vc65mnzl27ajc44kci
+  '@tiptap/extension-image': 2.0.0-beta.197_7ucu3cj5vc65mnzl27ajc44kci
   '@tiptap/extension-placeholder': 2.0.0-beta.197_7ucu3cj5vc65mnzl27ajc44kci
   '@tiptap/extension-table': 2.0.0-beta.195_7ucu3cj5vc65mnzl27ajc44kci
   '@tiptap/extension-table-cell': 2.0.0-beta.195_7ucu3cj5vc65mnzl27ajc44kci
@@ -681,8 +685,8 @@ packages:
       '@tiptap/core': 2.0.0-beta.197
     dev: false
 
-  /@tiptap/extension-dropcursor/2.0.0-beta.195_7ucu3cj5vc65mnzl27ajc44kci:
-    resolution: {integrity: sha512-Dd84daHPJ2nn15gEf7n4dDEDCTCOGfaZr7dA7lXhJz8P5OU2gQ1tboSPDxPPzwbnSJ3C4U+zngfVA1ZsbO7ARQ==}
+  /@tiptap/extension-dropcursor/2.0.0-beta.197_7ucu3cj5vc65mnzl27ajc44kci:
+    resolution: {integrity: sha512-8vIeOkPuonZuK0byEsX8R4c25GAGr6PW/h6+UND2eBhn2TNwiteknJQAawqY17hHVLkUlFcwGt+lt+hmo+zR2A==}
     peerDependencies:
       '@tiptap/core': ^2.0.0-beta.193
     dependencies:
@@ -750,6 +754,14 @@ packages:
     dependencies:
       '@tiptap/core': 2.0.0-beta.197
       prosemirror-state: 1.4.1
+    dev: false
+
+  /@tiptap/extension-image/2.0.0-beta.197_7ucu3cj5vc65mnzl27ajc44kci:
+    resolution: {integrity: sha512-Etalj9K9I3ey4EJcsgP+dcc2PDOGB+5UFz6nTtvT8NzNAx3ceBPsQsvGDnvT/2U7Vr+P7G7/x6en3ENAj+GWIw==}
+    peerDependencies:
+      '@tiptap/core': ^2.0.0-beta.193
+    dependencies:
+      '@tiptap/core': 2.0.0-beta.197
     dev: false
 
   /@tiptap/extension-italic/2.0.0-beta.195_7ucu3cj5vc65mnzl27ajc44kci:
@@ -899,7 +911,7 @@ packages:
       '@tiptap/extension-code': 2.0.0-beta.197_7ucu3cj5vc65mnzl27ajc44kci
       '@tiptap/extension-code-block': 2.0.0-beta.197_7ucu3cj5vc65mnzl27ajc44kci
       '@tiptap/extension-document': 2.0.0-beta.197_7ucu3cj5vc65mnzl27ajc44kci
-      '@tiptap/extension-dropcursor': 2.0.0-beta.195_7ucu3cj5vc65mnzl27ajc44kci
+      '@tiptap/extension-dropcursor': 2.0.0-beta.197_7ucu3cj5vc65mnzl27ajc44kci
       '@tiptap/extension-gapcursor': 2.0.0-beta.195_7ucu3cj5vc65mnzl27ajc44kci
       '@tiptap/extension-hard-break': 2.0.0-beta.195_7ucu3cj5vc65mnzl27ajc44kci
       '@tiptap/extension-heading': 2.0.0-beta.195_7ucu3cj5vc65mnzl27ajc44kci

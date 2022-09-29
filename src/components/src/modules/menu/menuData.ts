@@ -75,6 +75,26 @@ export function useMenuData(editor: Editor) {
       render: markRaw(EmojiSelect),
     },
     {
+      icon: 'brush-line',
+      title: '添加画布',
+      render: markRaw(MenuItem),
+      action: () => editor?.chain().focus().insertContent('<div data-type="paper"></div>').run(),
+    },
+    {
+      icon: 'image-add-line',
+      title: '添加图片',
+      render: markRaw(MenuItem),
+      action: () => {
+        const url = window.prompt('URL')
+        if (url)
+          // return editor?.chain().focus().setImage({ src: url }).run()
+          return editor?.chain().focus().setImage({ src: url }).run()
+
+        else
+          return false
+      },
+    },
+    {
       type: 'divider',
       title: '分割线',
     },
@@ -89,12 +109,6 @@ export function useMenuData(editor: Editor) {
       title: '清除格式',
       render: markRaw(MenuItem),
       action: () => editor?.chain().focus().clearNodes().unsetAllMarks().run(),
-    },
-    {
-      icon: 'brush-line',
-      title: '添加画布',
-      render: markRaw(MenuItem),
-      action: () => editor?.chain().focus().insertContent('<div data-type="paper"></div>').run(),
     },
     {
       type: 'divider',

@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { inject } from 'vue'
+import { computed, inject } from 'vue'
 import { BubbleMenu } from '@tiptap/vue-3'
 import { editorKey } from '../../utils'
 import MenuBar from '../menu/MenuBar.vue'
@@ -8,11 +8,16 @@ import { useBubbleData } from './bubbleData'
 const editor = inject(editorKey)!()
 const getBody = () => document.body// 防止tippy报警
 const bubbleData = useBubbleData(editor.value)
+const bubbleMenuVisible = computed(() => {
+  return !editor.value?.isActive('paper')
+  && !editor.value?.isActive('codeBlock')
+  && !editor.value?.isActive('image')
+})
 </script>
 
 <template>
   <BubbleMenu
-    v-if="!editor?.isActive('paper')"
+    v-if="bubbleMenuVisible"
     class="currency-bubble"
     :tippy-options="{
       duration: 100,
