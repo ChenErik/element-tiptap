@@ -52,5 +52,18 @@ export function useFloatingData(editor: Editor) {
       render: markRaw(MenuItem),
       action: () => editor?.chain().focus().insertContent('<div data-type="paper"></div>').run(),
     },
+    {
+      icon: 'image-add-line',
+      title: '添加图片',
+      render: markRaw(MenuItem),
+      action: () => {
+        const url = window.prompt('URL')
+        if (url)
+          return editor?.chain().focus().setImage({ src: url }).run()
+
+        else
+          return false
+      },
+    },
   ])
 }

@@ -8,7 +8,6 @@ specifiers:
   '@tiptap/extension-code-block-lowlight': 2.0.0-beta.197
   '@tiptap/extension-color': 2.0.0-beta.196
   '@tiptap/extension-document': 2.0.0-beta.197
-  '@tiptap/extension-dropcursor': 2.0.0-beta.197
   '@tiptap/extension-highlight': 2.0.0-beta.195
   '@tiptap/extension-image': 2.0.0-beta.197
   '@tiptap/extension-placeholder': 2.0.0-beta.197
@@ -51,7 +50,6 @@ dependencies:
   '@tiptap/extension-code-block-lowlight': 2.0.0-beta.197_7ucu3cj5vc65mnzl27ajc44kci
   '@tiptap/extension-color': 2.0.0-beta.196_mpfpbxnfyti6who622jw73viky
   '@tiptap/extension-document': 2.0.0-beta.197_7ucu3cj5vc65mnzl27ajc44kci
-  '@tiptap/extension-dropcursor': 2.0.0-beta.197_7ucu3cj5vc65mnzl27ajc44kci
   '@tiptap/extension-highlight': 2.0.0-beta.195_7ucu3cj5vc65mnzl27ajc44kci
   '@tiptap/extension-image': 2.0.0-beta.197_7ucu3cj5vc65mnzl27ajc44kci
   '@tiptap/extension-placeholder': 2.0.0-beta.197_7ucu3cj5vc65mnzl27ajc44kci

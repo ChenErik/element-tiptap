@@ -87,7 +87,6 @@ export function useMenuData(editor: Editor) {
       action: () => {
         const url = window.prompt('URL')
         if (url)
-          // return editor?.chain().focus().setImage({ src: url }).run()
           return editor?.chain().focus().setImage({ src: url }).run()
 
         else

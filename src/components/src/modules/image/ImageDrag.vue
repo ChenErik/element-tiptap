@@ -78,13 +78,7 @@ export default {
         />
       </div>
       <img :style="{ width: imageWidth, height: imageHeight }" :src="props.node.attrs.src">
-      <!-- <NodeViewContent
-        as="img"
-        :style="{ width: imageWidth, height: imageHeight }"
-        :src="props.node.attrs.src"
-      /> -->
     </div>
-    <NodeViewContent class="content" />
   </NodeViewWrapper>
 </template>
 

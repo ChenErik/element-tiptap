@@ -24,6 +24,6 @@ export default [
   ...TaskExtension,
   ...TableExtension,
   ...ColorExtension,
-  ImageExtension,
+  ...ImageExtension,
   Paper,
 ]
