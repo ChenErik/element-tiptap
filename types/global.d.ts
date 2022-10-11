@@ -3,6 +3,7 @@ declare global {
   interface MenuItemProps {
     type?: string
     icon?: string
+    activeIcon?:string
     title: string
     action?: () => boolean
     isActive?: () => boolean

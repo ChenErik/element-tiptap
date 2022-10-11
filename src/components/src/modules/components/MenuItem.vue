@@ -7,14 +7,35 @@ interface MenuItemProps {
   title: string
   action?: () => boolean
   isActive?: () => boolean
+  isFullScreen?: boolean
+  activeIcon?: string
   // disabled?: () => boolean
 }
 const props = defineProps<MenuItemProps>()
+const emit = defineEmits<{
+  (e: 'fullScreen', value: boolean): void
+}>()
 const iconUrl = ref(remixiconUrl)
 const menuItemRef = ref<HTMLButtonElement>()
 onMounted(() => {
   useTippy(menuItemRef.value!, props.title)
 })
+function editorAction() {
+  if (props.title === '全屏')
+    emit('fullScreen', !props.isFullScreen)
+  else
+    props.action?.()
+}
+function getIcon() {
+  let i: string | undefined = ''
+  if (props.title === '全屏')
+    i = props.isFullScreen ? props.activeIcon : props.icon
+
+  else
+    i = props.icon
+
+  return i
+}
 </script>
 
 <template>
@@ -22,10 +43,10 @@ onMounted(() => {
     ref="menuItemRef"
     class="menu-item"
     :class="{ 'is-active': isActive ? isActive() : null }"
-    @click="action"
+    @click="editorAction"
   >
     <svg class="remix">
-      <use :xlink:href="`${iconUrl}#ri-${icon}`" />
+      <use :xlink:href="`${iconUrl}#ri-${getIcon()}`" />
     </svg>
   </button>
 </template>

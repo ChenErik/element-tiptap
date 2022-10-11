@@ -1,15 +1,22 @@
 <script lang="ts" setup>
 interface MenuBarProps {
   items: MenuItemProps[]
+  isFullScreen?: boolean
 }
 defineProps<MenuBarProps>()
+const emit = defineEmits<{
+  (e: 'fullScreen', value: boolean): void
+}>()
+function fullScreen(value: boolean) {
+  emit('fullScreen', value)
+}
 </script>
 
 <template>
   <div class="menu-bar">
     <template v-for="(item, index) in items">
       <div v-if="item.type === 'divider'" :key="`divider${index}`" class="divider" />
-      <component :is="item.render" v-else :key="index" v-bind="item" />
+      <component :is="item.render" v-else :key="index" v-bind="item" :is-full-screen="isFullScreen" @fullScreen="fullScreen" />
     </template>
   </div>
 </template>

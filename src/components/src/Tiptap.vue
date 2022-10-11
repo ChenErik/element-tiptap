@@ -39,6 +39,7 @@ const props = withDefaults(defineProps<Props>(), {
   type: 'html',
 })
 const emit = defineEmits(['update:html', 'update:json'])
+const isFullScreen = ref<boolean>(false)
 /* 创建编辑器 */
 const menuData = ref<MenuItemProps[]>([])
 const editor = useEditor({
@@ -76,10 +77,10 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <div v-if="editor" class="element-tiptap">
+  <div v-if="editor" class="element-tiptap" :class="{ 'element-tiptap_fullscreen': isFullScreen }">
     <CusBubbleMenu />
     <CusFloatingMenu />
-    <MenuBar class="element-tiptap_header" :items="menuData" />
+    <MenuBar class="element-tiptap_header" :items="menuData" :is-full-screen="isFullScreen" @full-screen="(value) => isFullScreen = value" />
     <EditorContent class="element-tiptap_content" :editor="editor" />
   </div>
 </template>
@@ -99,6 +100,7 @@ onBeforeUnmount(() => {
   color: #0d0d0d;
   background-color: #fff;
   border: 1px solid #ccc;
+  border-radius: 4px;
   flex-grow: 1;
 
   &_header {
@@ -124,6 +126,19 @@ onBeforeUnmount(() => {
     color: #ced4da;
     pointer-events: none;
     height: 0;
+  }
+
+  &_fullscreen {
+    border-radius: 0 !important;
+    bottom: 0 !important;
+    height: 100% !important;
+    left: 0 !important;
+    margin: 0 !important;
+    position: fixed !important;
+    right: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    z-index: 500;
   }
 }
 </style>

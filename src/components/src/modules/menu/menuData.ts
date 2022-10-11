@@ -124,5 +124,16 @@ export function useMenuData(editor: Editor) {
       title: '重做',
       render: markRaw(MenuItem),
       action: () => editor?.chain().focus().redo().run(),
-    }])
+    },
+    {
+      type: 'divider',
+      title: '分割线',
+    },
+    {
+      icon: 'fullscreen-line',
+      activeIcon: 'fullscreen-exit-line',
+      title: '全屏',
+      render: markRaw(MenuItem),
+    },
+  ])
 }
