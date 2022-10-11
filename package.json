@@ -43,6 +43,7 @@
   "devDependencies": {
     "@antfu/eslint-config": "^0.26.3",
     "@types/d3": "^7.4.0",
+    "@types/node": "^18.7.23",
     "@vitejs/plugin-vue": "^3.1.0",
     "eslint": "^8.23.1",
     "less": "^4.1.3",

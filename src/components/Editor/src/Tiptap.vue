@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { JSONContent } from '@tiptap/vue-3'
 import { onBeforeUnmount, provide, ref, watch } from 'vue'
-import { Editor, EditorContent, useEditor } from '@tiptap/vue-3'
+import { EditorContent, useEditor } from '@tiptap/vue-3'
 /* 扩展 */
 import extensions from './extension/index'
 /* 扩展 */
@@ -74,6 +74,12 @@ watch([() => props.html, () => props.json], (n, o) => {
 onBeforeUnmount(() => {
   editor.value?.destroy()
 })
+</script>
+
+<script lang="ts">
+export default {
+  name: 'TipEditor',
+}
 </script>
 
 <template>
