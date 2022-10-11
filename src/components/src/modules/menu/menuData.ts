@@ -76,9 +76,15 @@ export function useMenuData(editor: Editor) {
     },
     {
       icon: 'brush-line',
-      title: '添加画布',
+      title: '画布',
       render: markRaw(MenuItem),
       action: () => editor?.chain().focus().insertContent('<div data-type="paper"></div>').run(),
+    },
+    {
+      icon: 'lightbulb-line',
+      title: '高亮块',
+      render: markRaw(MenuItem),
+      action: () => editor?.chain().focus().insertContent('<div data-type="highlight-block"></div>').run(),
     },
     {
       icon: 'image-add-line',

@@ -25,6 +25,7 @@ declare module '@vue/runtime-core' {
     Emoji: typeof import('./../src/components/src/modules/emoji/Emoji.vue')['default']
     FontSelect: typeof import('./../src/components/src/modules/font/FontSelect.vue')['default']
     FontStyle: typeof import('./../src/components/src/modules/font/FontStyle.vue')['default']
+    HighLightBlock: typeof import('./../src/components/src/modules/highLightBlock/HighLightBlock.vue')['default']
     IconDropdown: typeof import('./../src/components/src/modules/components/IconDropdown.vue')['default']
     Image: typeof import('./../src/components/src/modules/image/Image.vue')['default']
     ImageDrag: typeof import('./../src/components/src/modules/image/ImageDrag.vue')['default']
