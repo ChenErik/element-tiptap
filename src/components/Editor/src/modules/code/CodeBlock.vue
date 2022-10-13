@@ -45,6 +45,7 @@ const languages = ref<List[]>(getLanguages())
 <style lang="less" scoped>
 .code-block {
   position: relative;
+  margin: 5px 0;
 
   &_select {
     position: absolute;

@@ -10,6 +10,7 @@ specifiers:
   '@tiptap/extension-document': 2.0.0-beta.197
   '@tiptap/extension-highlight': 2.0.0-beta.195
   '@tiptap/extension-image': 2.0.0-beta.197
+  '@tiptap/extension-link': 2.0.0-beta.199
   '@tiptap/extension-placeholder': 2.0.0-beta.197
   '@tiptap/extension-table': 2.0.0-beta.195
   '@tiptap/extension-table-cell': 2.0.0-beta.195
@@ -53,6 +54,7 @@ dependencies:
   '@tiptap/extension-document': 2.0.0-beta.197_7ucu3cj5vc65mnzl27ajc44kci
   '@tiptap/extension-highlight': 2.0.0-beta.195_7ucu3cj5vc65mnzl27ajc44kci
   '@tiptap/extension-image': 2.0.0-beta.197_7ucu3cj5vc65mnzl27ajc44kci
+  '@tiptap/extension-link': 2.0.0-beta.199_7ucu3cj5vc65mnzl27ajc44kci
   '@tiptap/extension-placeholder': 2.0.0-beta.197_7ucu3cj5vc65mnzl27ajc44kci
   '@tiptap/extension-table': 2.0.0-beta.195_7ucu3cj5vc65mnzl27ajc44kci
   '@tiptap/extension-table-cell': 2.0.0-beta.195_7ucu3cj5vc65mnzl27ajc44kci
@@ -770,6 +772,17 @@ packages:
       '@tiptap/core': ^2.0.0-beta.193
     dependencies:
       '@tiptap/core': 2.0.0-beta.197
+    dev: false
+
+  /@tiptap/extension-link/2.0.0-beta.199_7ucu3cj5vc65mnzl27ajc44kci:
+    resolution: {integrity: sha512-zwXDg+zsHhn2a4rJkFd/pND4zUfJ2RCgyrkBqAL+nimSiknaSsIw4NpnZTZFWze9i3NDcc2BNngDNovoEIEukg==}
+    peerDependencies:
+      '@tiptap/core': ^2.0.0-beta.193
+    dependencies:
+      '@tiptap/core': 2.0.0-beta.197
+      linkifyjs: 3.0.5
+      prosemirror-model: 1.18.1
+      prosemirror-state: 1.4.1
     dev: false
 
   /@tiptap/extension-list-item/2.0.0-beta.195_7ucu3cj5vc65mnzl27ajc44kci:
@@ -3609,6 +3622,10 @@ packages:
   /lines-and-columns/1.2.4:
     resolution: {integrity: sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg==}
     dev: true
+
+  /linkifyjs/3.0.5:
+    resolution: {integrity: sha512-1Y9XQH65eQKA9p2xtk+zxvnTeQBG7rdAXSkUG97DmuI/Xhji9uaUzaWxRj6rf9YC0v8KKHkxav7tnLX82Sz5Fg==}
+    dev: false
 
   /local-pkg/0.4.2:
     resolution: {integrity: sha512-mlERgSPrbxU3BP4qBqAvvwlgW4MTg78iwJdGGnv7kibKjWcJksrG3t6LB5lXI93wXRDvG4NpUgJFmTG4T6rdrg==}

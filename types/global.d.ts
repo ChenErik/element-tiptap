@@ -13,3 +13,11 @@ declare global {
     disabled?:()=>boolean
   }
 }
+
+declare module '@tiptap/core' {
+  interface Commands<ReturnType> {
+    highLightBlock: {
+      setHighlightBlock: (attributes?: { language: string }) => ReturnType,
+    }
+  }
+}

@@ -84,11 +84,11 @@ export function useMenuData(editor: Editor) {
       icon: 'lightbulb-line',
       title: '高亮块',
       render: markRaw(MenuItem),
-      action: () => editor?.chain().focus().insertContent('<div data-type="highlight-block"></div>').run(),
+      action: () => editor?.chain().focus().setHighlightBlock().run(),
     },
     {
       icon: 'image-add-line',
-      title: '添加图片',
+      title: '图片',
       render: markRaw(MenuItem),
       action: () => {
         const url = window.prompt('URL')
@@ -97,6 +97,38 @@ export function useMenuData(editor: Editor) {
 
         else
           return false
+      },
+    },
+    {
+      icon: 'links-line',
+      title: '链接',
+      render: markRaw(MenuItem),
+      isActive: () => editor?.isActive('link'),
+      action: () => {
+        const previousUrl = editor.getAttributes('link').href
+        const url = window.prompt('URL', previousUrl)
+
+        // cancelled
+        if (url === null)
+          return false
+
+        // empty
+        if (url === '') {
+          return editor
+            .chain()
+            .focus()
+            .extendMarkRange('link')
+            .unsetLink()
+            .run()
+        }
+
+        // update link
+        return editor
+          .chain()
+          .focus()
+          .extendMarkRange('link')
+          .setLink({ href: url })
+          .run()
       },
     },
     {

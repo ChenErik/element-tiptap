@@ -1,3 +1,4 @@
+import type { CommandProps } from '@tiptap/vue-3'
 import { Node, VueNodeViewRenderer, mergeAttributes } from '@tiptap/vue-3'
 
 import HighLightBlock from './HighLightBlock.vue'
@@ -5,8 +6,23 @@ import HighLightBlock from './HighLightBlock.vue'
 export default Node.create({
   name: 'highlightBlock',
 
+  content: 'text*',
+
   group: 'block',
-  content: 'inline*',
+
+  code: true,
+
+  defining: true,
+
+  addCommands() {
+    return {
+      setHighlightBlock: (_attributes: { language: string } | undefined) => ({ commands }: CommandProps) => {
+        return commands.insertContent({
+          type: 'highlightBlock',
+        })
+      },
+    }
+  },
   parseHTML() {
     return [
       {

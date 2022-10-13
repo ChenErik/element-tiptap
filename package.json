@@ -17,6 +17,7 @@
     "@tiptap/extension-document": "2.0.0-beta.197",
     "@tiptap/extension-highlight": "2.0.0-beta.195",
     "@tiptap/extension-image": "2.0.0-beta.197",
+    "@tiptap/extension-link": "2.0.0-beta.199",
     "@tiptap/extension-placeholder": "2.0.0-beta.197",
     "@tiptap/extension-table": "2.0.0-beta.195",
     "@tiptap/extension-table-cell": "2.0.0-beta.195",
