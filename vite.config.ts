@@ -26,7 +26,7 @@ export default defineConfig({
   build: {
     outDir: 'lib',
     lib: {
-      entry: resolve(__dirname, 'src/components/index.js'), // 指定组件编译入口文件
+      entry: resolve(__dirname, 'src/components/index.ts'), // 指定组件编译入口文件
       name: 'TipEditor',
       fileName: 'tip-editor',
     }, // 库编译模式配置
