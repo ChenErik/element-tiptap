@@ -31,7 +31,7 @@ export default [
         color: {
           default: null,
           // Take the attribute values
-          renderHTML: (_attributes) => {
+          renderHTML: (_attributes: any) => {
             // … and return an object with HTML attributes.
             return {
               style: 'color: #1890ff',
