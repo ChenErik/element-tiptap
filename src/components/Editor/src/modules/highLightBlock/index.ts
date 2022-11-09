@@ -5,21 +5,22 @@ import HighLightBlock from './HighLightBlock.vue'
 
 export default Node.create({
   name: 'highlightBlock',
-
-  content: 'text*',
+  addOptions() {
+    return {
+      HTMLAttributes: {},
+    }
+  },
+  content: 'block+',
 
   group: 'block',
 
-  code: true,
-
   defining: true,
+  draggable: true,
 
   addCommands() {
     return {
       setHighlightBlock: (_attributes: { language: string } | undefined) => ({ commands }: CommandProps) => {
-        return commands.insertContent({
-          type: 'highlightBlock',
-        })
+        return commands.wrapIn(this.name)
       },
     }
   },
@@ -32,7 +33,7 @@ export default Node.create({
   },
 
   renderHTML({ HTMLAttributes }) {
-    return ['div', mergeAttributes(HTMLAttributes, { 'data-type': 'highlight-block' })]
+    return ['div', mergeAttributes(this.options.HTMLAttributes, HTMLAttributes, { 'data-type': 'highlight-block' }), 0]
   },
 
   addNodeView() {

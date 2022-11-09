@@ -8,9 +8,6 @@ const install = (App: App<Element>) => {
   components.forEach((item) => {
     App.component(item.name, item)
   })
-  App.component(TipEditor.name, TipEditor)
+  // App.component(TipEditor.name, TipEditor)
 }
-export { TipEditor }
-export default {
-  install,
-}
+export { install, TipEditor }

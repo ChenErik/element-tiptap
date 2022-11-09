@@ -7,6 +7,7 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    Attachment: typeof import('./../src/components/Editor/src/modules/attachment/Attachment.vue')['default']
     CodeBlock: typeof import('./../src/components/Editor/src/modules/code/CodeBlock.vue')['default']
     ColorSelect: typeof import('./../src/components/Editor/src/modules/color/ColorSelect.vue')['default']
     CusBubbleMenu: typeof import('./../src/components/Editor/src/modules/bubble/CusBubbleMenu.vue')['default']

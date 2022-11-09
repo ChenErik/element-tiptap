@@ -13,6 +13,7 @@ import CusBubbleMenu from './modules/bubble/CusBubbleMenu.vue'
 import CusFloatingMenu from './modules/floating/CusFloatingMenu.vue'
 /* 向下注入editor的key */
 import { editorKey } from './utils/index'
+import { fileStore } from './utils/store'
 import { useMenuData } from './modules/menu/menuData'
 interface Props {
   html?: string
@@ -38,7 +39,7 @@ const props = withDefaults(defineProps<Props>(), {
   }),
   type: 'html',
 })
-const emit = defineEmits(['update:html', 'update:json'])
+const emit = defineEmits(['update:html', 'update:json', 'pasteFile'])
 const isFullScreen = ref<boolean>(false)
 /* 创建编辑器 */
 const menuData = ref<MenuItemProps[]>([])
@@ -58,7 +59,6 @@ const editor = useEditor({
   },
 })
 /* 获取菜单数据 */
-
 /* 向下注入editor对象 */
 provide(editorKey, () => editor)
 /* 监听传进来的初始值变化 */
@@ -71,8 +71,15 @@ watch([() => props.html, () => props.json], (n, o) => {
     return
   editor.value?.commands.setContent(props.type === 'html' ? htmlNew : jsonNew, false)
 })
+watch(fileStore, (n) => {
+  if (n)
+    emit('pasteFile', n)
+})
 onBeforeUnmount(() => {
   editor.value?.destroy()
+})
+defineExpose({
+  editor,
 })
 </script>
 
@@ -95,6 +102,7 @@ export default {
 @import 'tippy.js/dist/tippy.css';
 @import 'tippy.js/animations/perspective-extreme.css';
 @import './style/tibby.css';
+@import 'element-plus/dist/index.css';
 </style>
 
 <style lang="less">

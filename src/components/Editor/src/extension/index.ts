@@ -5,6 +5,7 @@ import Document from '@tiptap/extension-document'
 import Link from '@tiptap/extension-link'
 import Paper from '../modules/draw/paper'
 import HighlightBlock from '../modules/highLightBlock/index'
+import Attachment from '../modules/attachment/attachment'
 import TableExtension from './table'
 import ColorExtension from './color'
 import TaskExtension from './taskList'
@@ -47,5 +48,6 @@ export default [
   ...ImageExtension,
   Paper,
   HighlightBlock,
+  Attachment,
   EventHandler,
 ]

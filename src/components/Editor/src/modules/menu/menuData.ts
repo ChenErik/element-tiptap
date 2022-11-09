@@ -1,5 +1,6 @@
 import type { Editor } from '@tiptap/vue-3'
 import { markRaw, ref } from 'vue'
+import { ElMessageBox } from 'element-plus'
 import MenuItem from '../components/MenuItem.vue'
 import FontSelectList from '../font/FontSelect.vue'
 import FontStyle from '../font/FontStyle.vue'
@@ -90,13 +91,26 @@ export function useMenuData(editor: Editor) {
       icon: 'image-add-line',
       title: '图片',
       render: markRaw(MenuItem),
-      action: () => {
-        const url = window.prompt('URL')
-        if (url)
-          return editor?.chain().focus().setImage({ src: url }).run()
+      action: async () => {
+        const { value } = await ElMessageBox.prompt('请输入图片链接', '提示', {
+          confirmButtonText: '确认',
+          cancelButtonText: '关闭',
+          inputPattern: /(http|ftp|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&amp;:/~\+#]*[\w\-\@?^=%&amp;/~\+#])?/,
+          inputErrorMessage: '请输入正确的网址',
+        })
+        if (value)
+          return editor?.chain().focus().setImage({ src: value }).run()
 
         else
           return false
+      },
+    },
+    {
+      icon: 'upload-cloud-line',
+      title: '上传附件',
+      render: markRaw(MenuItem),
+      action: async () => {
+        return editor?.chain().focus().setAttachment({ name: '文件名', size: '120kb', src: 'https://cn.vitejs.dev/logo-with-shadow.png' }).run()
       },
     },
     {

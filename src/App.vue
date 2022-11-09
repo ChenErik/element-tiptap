@@ -1,6 +1,14 @@
 <script setup lang="ts">
 // This starter template is using Vue 3 <script setup> SFCs
+import { ref } from 'vue'
+import { TipEditor } from './components/index'
+
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
+const editorRef = ref<typeof TipEditor>()
+const pasteFile = async (file: File) => {
+  console.log(file)
+  editorRef.value?.editor?.chain().focus().setImage({ src: 'https://cn.vitejs.dev/logo-with-shadow.png' }).run()
+}
 </script>
 
 <template>
@@ -12,7 +20,7 @@
       <img src="./assets/vue.svg" class="logo vue" alt="Vue logo">
     </a>
   </div>
-  <Tiptap />
+  <TipEditor ref="editorRef" @pasteFile="pasteFile" />
 </template>
 
 <style scoped>

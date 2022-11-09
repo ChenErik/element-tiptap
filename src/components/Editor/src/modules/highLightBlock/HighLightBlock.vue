@@ -8,6 +8,8 @@ defineProps(nodeViewProps)
     <div
       class="highlight-block_emoji"
       contenteditable="false"
+      draggable="true"
+      data-drag-handle
     >
       🎉
     </div>

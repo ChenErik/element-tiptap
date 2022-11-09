@@ -5,7 +5,7 @@ declare global {
     icon?: string
     activeIcon?:string
     title: string
-    action?: () => boolean
+    action?: (()=>Promise<boolean>)| (()=>boolean)
     isActive?: () => boolean
     render?: any
     divided?: boolean

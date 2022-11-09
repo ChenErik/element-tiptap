@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { inject, onMounted, ref, watch } from 'vue'
-import { ArrowDown, Check } from '@element-plus/icons-vue'
+import { inject } from 'vue'
+import { ArrowDown } from '@element-plus/icons-vue'
 import { editorKey } from '../../utils/index'
 import MenuItem from './MenuItem.vue'
 interface List {

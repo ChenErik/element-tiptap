@@ -10,3 +10,4 @@ export function getUuid(): string {
     return v.toString()
   })
 }
+
