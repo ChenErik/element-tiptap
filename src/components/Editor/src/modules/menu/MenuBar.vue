@@ -16,7 +16,7 @@ function fullScreen(value: boolean) {
   <div class="menu-bar">
     <template v-for="(item, index) in items">
       <div v-if="item.type === 'divider'" :key="`divider${index}`" class="divider" />
-      <component :is="item.render" v-else :key="index" v-bind="item" :is-full-screen="isFullScreen" @fullScreen="fullScreen" />
+      <component :is="item.render" v-else v-bind="item" :is-full-screen="isFullScreen" @fullScreen="fullScreen" />
     </template>
   </div>
 </template>

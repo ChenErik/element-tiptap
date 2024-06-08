@@ -6,7 +6,7 @@ const components = [
 const install = (App: App<Element>) => {
   /* 可能会加入其他组件 */
   components.forEach((item) => {
-    App.component(item.name, item)
+    App.component(item.name!, item)
   })
   // App.component(TipEditor.name, TipEditor)
 }
